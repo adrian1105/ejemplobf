@@ -1,0 +1,104 @@
+﻿<UserControl x:Class="Vivaldi.View.CapturaAleatoriaControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+             TextElement.FontWeight="Regular"
+             TextElement.FontSize="13"
+             TextOptions.TextFormattingMode="Ideal"
+             TextOptions.TextRenderingMode="Auto"
+             Background="{DynamicResource MaterialDesignPaper}"
+             FontFamily="{DynamicResource MaterialDesignFont}"
+             xmlns:local="clr-namespace:Vivaldi.View"
+             mc:Ignorable="d" Height="482.335" Width="385.03">
+    <Grid>
+
+        <materialDesign:Card
+            materialDesign:ShadowAssist.ShadowDepth="Depth5">
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="33*"/>
+                    <ColumnDefinition Width="320*"/>
+                    <ColumnDefinition Width="32*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="62*"/>
+                    <RowDefinition Height="50*"/>
+                    <RowDefinition Height="56*"/>
+                    <RowDefinition Height="83*"/>
+                    <RowDefinition Height="47*"/>
+                    <RowDefinition Height="71*"/>
+                    <RowDefinition Height="61*"/>
+                    <RowDefinition Height="52*"/>
+                </Grid.RowDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"
+                    Content="Información del examinando" FontSize="22" FontWeight="Bold" Height="34" Margin="7,14" Width="306"/>
+
+                <TextBox Grid.Row="1" Grid.Column="1" VerticalAlignment="Bottom"
+                  materialDesign:HintAssist.Hint="Tipo de documento" x:Name="lblNombreTipoDocumento"
+                  Style="{StaticResource MaterialDesignFloatingHintTextBox}" IsReadOnly="true" Height="37" />
+
+                <TextBox Grid.Row="2" Grid.Column="1" IsReadOnly="true" VerticalAlignment="Bottom"
+                  materialDesign:HintAssist.Hint="Número identificación " x:Name="lblNumeroIdentificacion"
+                  Style="{StaticResource MaterialDesignFloatingHintTextBox}" Height="37"/>
+
+                <TextBox Grid.Row="3" Grid.Column="1" IsReadOnly="true"
+                    Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"
+                    VerticalAlignment="Bottom" x:Name="lblNombresCompletos"
+                    AcceptsReturn="True" IsEnabled="true"
+                    TextWrapping="Wrap"
+                    MaxWidth="400"
+                    materialDesign:HintAssist.Hint="Nombres" Height="60" />
+
+                <ComboBox  Grid.Row="4" Grid.Column="1"  VerticalAlignment="Bottom"
+                      materialDesign:HintAssist.Hint="Huella registrada en el documento" x:Name="cbxHuella"
+                      Style="{StaticResource MaterialDesignFloatingHintComboBox}" Height="40"/>
+
+                <StackPanel Grid.Row="5" Grid.Column="1"  
+                            VerticalAlignment="Bottom" Height="42">
+
+                    <Label    HorizontalAlignment="Right"
+                            FontWeight="Bold"
+                            Content="Autorización de tratamiento de datos"/>
+
+                    <CheckBox  HorizontalAlignment="Right"
+                        x:Name="ckbAceptar" Content=" He leído y acepto los términos"
+                        IsThreeState="False"
+                        IsChecked="False" Click="ckbAceptar_Click"/>
+
+
+                </StackPanel>
+
+                <TextBlock Grid.Row="6" Grid.Column="1" x:Name="tbxErrorCaptura" Margin="0,12,0,5"
+                               TextWrapping="Wrap" TextAlignment="Center" Foreground="Red" FontSize="10"/>
+
+
+                <StackPanel Grid.Row="7" Grid.Column="1" VerticalAlignment="Top"
+                        Orientation="Horizontal" HorizontalAlignment="Center" Height="32" Margin="56,0" Width="208">
+                    
+                    <Button 
+                            FontSize="12" materialDesign:ShadowAssist.ShadowDepth="Depth2" 
+                            Background="#08088A" Content="ACEPTAR" x:Name="btnAceptarCaptura"
+                            Style="{StaticResource MaterialDesignRaisedButton}" IsEnabled="False"
+                            materialDesign:ButtonAssist.CornerRadius="10"
+                            BorderBrush="#08088A"
+                            Width="100" Click="btnAceptarCaptura_Click"/>
+
+                    <Label/>
+
+                    <Button FontSize="12"  materialDesign:ShadowAssist.ShadowDepth="Depth2" 
+                            Background="#00BFFF"
+                            Style="{StaticResource MaterialDesignRaisedButton}"
+                            x:Name="btnOmitirCaptura" BorderBrush="#00BFFF"
+                            materialDesign:ButtonAssist.CornerRadius="10" Content="OMITIR"
+                            Width="100"/>
+
+                </StackPanel>
+            </Grid>
+        </materialDesign:Card>
+    </Grid>
+</UserControl>

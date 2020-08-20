@@ -3,3 +3,6 @@
 ################################################################################
 
 /Vivaldi/bin/Debug
+/Vivaldi/obj/Debug
+/.vs/Vivaldi/v16
+/packages
